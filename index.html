@@ -1,19 +1,18 @@
 
-
 <!DOCTYPE HTML>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "">
 <HTML xml:lang="en" xmlns="">
 <HEAD>
 <title>Love(＞д＜)</title>
 <META content="IE=11.0000" http-equiv="X-UA-Compatible">
-<LINK href="data/default.css" rel="stylesheet" type="text/css">		 
+<LINK href="data/default.css" rel="stylesheet" type="text/css">
 <SCRIPT src="data/jquery.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-parser.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-jit.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-builderbase.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-async.min.js" type="text/javascript"></SCRIPT>
-<script type="text/javascript" src="data/jquery.iMissYou.js"></script>
+<!--<script type="text/javascript" src="data/jquery.iMissYou.js"></script>-->
 <SCRIPT src="data/jscex-async-powerpack.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/functions.js" type="text/javascript" charset="utf-8"></SCRIPT>
 <SCRIPT src="data/love.js" type="text/javascript" charset="utf-8"></SCRIPT>
@@ -23,34 +22,51 @@
 .STYLE1 {color: #666666}
 -->
 
-</STYLE>  
+</STYLE>
 <style type="text/css">
        @font-face{
 	   font-family: testtt;
 	   src: url(data/shiguangti.ttf);
 	   }
 </style>
+<script>
+// 浏览器标题切换
+var OriginTitile = document.title;    // 保存之前页面标题
+var titleTime;
+document.addEventListener('visibilitychange', function(){
+    if (document.hidden){
+        document.title ='你不要我了么？qwq';
+        clearTimeout(titleTime);
+    }else{
+        document.title = '我喜欢你啊。';
+        titleTime = setTimeout(function() {
+            document.title = OriginTitile;
+        }, 1000); // 2秒后恢复原标题
+    }
+});
+</script>
+
 </HEAD>
 <!--
 <script type="text/javascript" src="data/jquery.min.js"></script>
 <script type="text/javascript" src="data/jquery.iMissYou.js"></script>
 <script type="text/javascript">
-    
+
     $(function(){
-    
+
         $.iMissYou({
             //当前网页被隐藏的时候要显示的标题
             title:"你不要我了么 =7=",
             }
         });
-    
+
     });
-    
+
 </script>-->
 
 
 
-<font face="testtt" color="#da70d6" > 		
+<font face="testtt" color="#da70d6" >
 <DIV id="main">
 <DIV id="wrap">
 <DIV id="text">
@@ -60,7 +76,7 @@
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">我也相信我最大的快乐，就是每次等着你走过来，假装偶遇时的不安和满足。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">我会用以后的生命好好的疼你，爱护你，照顾你。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">不管时间怎么流逝，不管岁月如何无情。我都会一如继往的陪在你身边，走过人生的每一段路。
-</SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">快乐、欢笑、悲伤、泪水……你快乐我陪你笑，你难过我会给你一个依靠的肩膀！ 
+</SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">快乐、欢笑、悲伤、泪水……你快乐我陪你笑，你难过我会给你一个依靠的肩膀！
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">幸福是一辈子的事，经不起三心二意。我一定会学会担当，学会照顾好你，让你每天都能开开心心！！！
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">在这个并不适宜的场合说这些，确实有一点点小尴尬 ...
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say"><SPAN class="space"></SPAN> -- Hu (叫你姐姐 的 那个人) --</SPAN>
@@ -68,32 +84,32 @@
 <P></P>
 </DIV>
 </DIV>
-<DIV id="clock-box">我想这是我们认识的...</SPAN>               
+<DIV id="clock-box">我想这是我们认识的...</SPAN>
 <DIV id="clock"></DIV>
 </DIV>
-<CANVAS width="1100" height="680" 
+<CANVAS width="1100" height="680"
 id="canvas">
-</CANVAS>             
+</CANVAS>
 </DIV>
 </DIV>
 <SCRIPT>
     (function()
 	{
         var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) 
+
+        if (!canvas[0].getContext)
 		{
             $("#error").show();
             return false;
         }
         var width = canvas.width();
         var height = canvas.height();
-        
+
         canvas.attr("width", width);
         canvas.attr("height", height);
-        var opts = 
+        var opts =
 		{
-            seed: 
+            seed:
 			{
                 x: width / 2 - 20,
                 color: "rgb(190, 26, 37)",
@@ -115,16 +131,16 @@ id="canvas">
                     [546, 357, 608, 252, 678, 221, 6, 100, [
                         [590, 293, 646, 277, 648, 271, 2, 80]
                     ]]
-                ]] 
+                ]]
             ],
-			
-            bloom: 
+
+            bloom:
 			{
                 num: 700,
                 width: 1080,
                 height: 650,
             },
-            footer: 
+            footer:
 			{
                 width: 1200,
                 height: 5,
@@ -135,14 +151,14 @@ id="canvas">
         var seed = tree.seed;
         var foot = tree.footer;
         var hold = 1;
-        canvas.click(function(e) 
+        canvas.click(function(e)
 		{
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
-            if (seed.hover(x, y)) 
+            if (seed.hover(x, y))
 			{
-                hold = 0; 
+                hold = 0;
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
                 canvas.removeClass('hand');
@@ -154,45 +170,45 @@ id="canvas">
             y = e.pageY - offset.top;
             canvas.toggleClass('hand', seed.hover(x, y));
         });
-        var seedAnimate = eval(Jscex.compile("async", function () 
+        var seedAnimate = eval(Jscex.compile("async", function ()
 		{
             seed.draw();
-            while (hold) 
+            while (hold)
 			{
                 $await(Jscex.Async.sleep(10));
             }
-            while (seed.canScale()) 
+            while (seed.canScale())
 			{
                 seed.scale(0.95);
                 $await(Jscex.Async.sleep(10));
             }
-            while (seed.canMove()) 
+            while (seed.canMove())
 			{
                 seed.move(0, 2);
                 foot.draw();
                 $await(Jscex.Async.sleep(10));
             }
         }));
-        var growAnimate = eval(Jscex.compile("async", function () 
+        var growAnimate = eval(Jscex.compile("async", function ()
 		{
-            do 
+            do
 			{
     	        tree.grow();
                 $await(Jscex.Async.sleep(10));
             } while (tree.canGrow());
         }));
-        var flowAnimate = eval(Jscex.compile("async", function () 
+        var flowAnimate = eval(Jscex.compile("async", function ()
 		{
-            do 
+            do
 			{
     	        tree.flower(2);
                 $await(Jscex.Async.sleep(10));
             } while (tree.canFlower());
         }));
-        var moveAnimate = eval(Jscex.compile("async", function () 
+        var moveAnimate = eval(Jscex.compile("async", function ()
 		{
             tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) 
+            while (tree.move("p1", 500, 0))
 			{
                 foot.draw();
                 $await(Jscex.Async.sleep(10));
@@ -204,10 +220,10 @@ id="canvas">
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
-        var jumpAnimate = eval(Jscex.compile("async", function () 
+        var jumpAnimate = eval(Jscex.compile("async", function ()
 		{
             var ctx = tree.ctx;
-            while (true) 
+            while (true)
 			{
                 tree.ctx.clearRect(0, 0, width, height);
                 tree.jump();
@@ -215,23 +231,23 @@ id="canvas">
                 $await(Jscex.Async.sleep(25));
             }
         }));
-        var textAnimate = eval(Jscex.compile("async", function () 
+        var textAnimate = eval(Jscex.compile("async", function ()
 		{
 		    var together = new Date();
 		    together.setFullYear(2019,04,21); 			//时间年月日, 我是按去电子科大那次来的
-		    together.setHours(16);						//小时 (这下就是蒙的了)	
-		    together.setMinutes(03);					//分钟 
+		    together.setHours(16);						//小时 (这下就是蒙的了)
+		    together.setMinutes(03);					//分钟
 		    together.setSeconds(6);					    //秒前一位
 		    together.setMilliseconds(55);				//秒第二位
 		    $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
-            while (true) 
+            while (true)
 			{
                 timeElapse(together);
                 $await(Jscex.Async.sleep(1000));
             }
         }));
-        var runAsync = eval(Jscex.compile("async", function () 
+        var runAsync = eval(Jscex.compile("async", function ()
 		{
             $await(seedAnimate());
             $await(growAnimate());
@@ -259,13 +275,7 @@ id="canvas">
 	我怕，
 	等我有机会、有能力好好地爱你的时候，
 	你已离去。
-	
+
 	Don't leave me, I beg.
 	I hope, what we have is timeless.
-2019.11.14 update:
-快要去考试了，好想找你说说话... 趁着休息又改了一下，现在能在失去焦点的时候变换标题了
-具体文件： ./data/jquery.iMissyou.js
-准备考试啦（状态不好，爆了很多天的零了）
-看后天啦～
 -->
-
