@@ -12,7 +12,6 @@
 <SCRIPT src="data/jscex-jit.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-builderbase.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/jscex-async.min.js" type="text/javascript"></SCRIPT>
-<!--<script type="text/javascript" src="data/jquery.iMissYou.js"></script>-->
 <SCRIPT src="data/jscex-async-powerpack.min.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="data/functions.js" type="text/javascript" charset="utf-8"></SCRIPT>
 <SCRIPT src="data/love.js" type="text/javascript" charset="utf-8"></SCRIPT>
@@ -35,7 +34,7 @@ var OriginTitile = document.title;    // 保存之前页面标题
 var titleTime;
 document.addEventListener('visibilitychange', function(){
     if (document.hidden){
-        document.title ='你不要我了么？qwq';
+        document.title ='姐姐 你不要我了么？ qwq';
         clearTimeout(titleTime);
     }else{
         document.title = '我喜欢你啊。';
@@ -47,23 +46,6 @@ document.addEventListener('visibilitychange', function(){
 </script>
 
 </HEAD>
-<!--
-<script type="text/javascript" src="data/jquery.min.js"></script>
-<script type="text/javascript" src="data/jquery.iMissYou.js"></script>
-<script type="text/javascript">
-
-    $(function(){
-
-        $.iMissYou({
-            //当前网页被隐藏的时候要显示的标题
-            title:"你不要我了么 =7=",
-            }
-        });
-
-    });
-
-</script>-->
-
 
 
 <font face="testtt" color="#da70d6" >
@@ -278,4 +260,9 @@ id="canvas">
 
 	Don't leave me, I beg.
 	I hope, what we have is timeless.
+
+2019.11.15 update:
+明天考试啦，祝我～
+刚刚看博客的时候发现了一段神奇的代码，可以动态改变网页标题，顺手抄过来
+其实昨天就实现了，不过今天这个要简单一些。（删除 jquery.iMissYou.js 文件)
 -->
