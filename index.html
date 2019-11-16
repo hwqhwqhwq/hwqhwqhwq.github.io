@@ -28,9 +28,9 @@
 	   src: url(data/shiguangti.ttf);
 	   }
 </style>
-<script>
-// 浏览器标题切换
-var OriginTitile = document.title;    // 保存之前页面标题
+	
+<script>// 浏览器标题切换
+var OriginTitile = document.title; 
 var titleTime;
 document.addEventListener('visibilitychange', function(){
     if (document.hidden){
@@ -40,7 +40,7 @@ document.addEventListener('visibilitychange', function(){
         document.title = '我喜欢你啊。';
         titleTime = setTimeout(function() {
             document.title = OriginTitile;
-        }, 1000); // 2秒后恢复原标题
+        }, 2000);
     }
 });
 </script>
