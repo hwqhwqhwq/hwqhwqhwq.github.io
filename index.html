@@ -28,19 +28,19 @@
 	   src: url(data/shiguangti.ttf);
 	   }
 </style>
-	
-<script>// 浏览器标题切换
-var OriginTitile = document.title; 
+<script>
+
+var OriginTitile = document.title;    // 保存之前页面标题
 var titleTime;
 document.addEventListener('visibilitychange', function(){
     if (document.hidden){
-        document.title ='姐姐 你不要我了么？ qwq';
+        document.title ='你不要我了么？qwq';
         clearTimeout(titleTime);
     }else{
         document.title = '我喜欢你啊。';
         titleTime = setTimeout(function() {
             document.title = OriginTitile;
-        }, 1300);
+        }, 1000); // 2秒后恢复原标题
     }
 });
 </script>
@@ -53,13 +53,13 @@ document.addEventListener('visibilitychange', function(){
 <DIV id="wrap">
 <DIV id="text">
 <DIV id="code">
-<font color="#ff0000" size="3"><SPAN class="say">姐姐 ~，好想你啊 ~   嘿嘿， ~我喜欢你（＞▽＜）
+<font color="#ff0000" size="3"><SPAN class="say">姐姐 ~，好想你啊 ~   嗯嗯， ~我喜欢你（＞▽＜）
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">我相信世界上最好闻的味道 就是靠近你时 你身上散发出的香味。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">我也相信我最大的快乐，就是每次等着你走过来，假装偶遇时的不安和满足。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">我会用以后的生命好好的疼你，爱护你，照顾你。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">不管时间怎么流逝，不管岁月如何无情。我都会一如继往的陪在你身边，走过人生的每一段路。
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">快乐、欢笑、悲伤、泪水……你快乐我陪你笑，你难过我会给你一个依靠的肩膀！
-</SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">幸福是一辈子的事，经不起三心二意。我一定会学会担当，学会照顾好你，让你每天都能开开心心！！！
+</SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">幸福是一辈子的事，经不起三心二意。我一定会学会担当，学会照顾好你，让你每天都不被气死！
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say">在这个并不适宜的场合说这些，确实有一点点小尴尬 ...
 </SPAN><BR><SPAN class="say"></SPAN><BR><SPAN class="say"><SPAN class="space"></SPAN> -- Hu (叫你姐姐 的 那个人) --</SPAN>
 </font>
@@ -244,25 +244,3 @@ id="canvas">
 				</div>
 			</div>
 </font>
-
-<!--
-	写在最后，
-	不知道你是否在最初的时候就发觉了什么，
-	我是真的真的喜欢你，
-	也许不止喜欢了，
-	可是，等我反应过来的时候，
-	你都已经高三了，而我也踏入了高二的大门，
-	等你去了大学，我又会是高三；
-	刚好差着一年，变数真的很多，
-	我怕，
-	等我有机会、有能力好好地爱你的时候，
-	你已离去。
-
-	Don't leave me, I beg.
-	I hope, what we have is timeless.
-
-2019.11.15 update:
-明天考试啦，祝我～
-刚刚看博客的时候发现了一段神奇的代码，可以动态改变网页标题，顺手抄过来
-其实昨天就实现了，不过今天这个要简单一些。（删除 jquery.iMissYou.js 文件)
--->
