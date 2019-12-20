@@ -159,13 +159,13 @@
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
     	    ctx.lineTo(15, 15);
-    	    ctx.lineTo(60, 15);
+    	    ctx.lineTo(53, 15);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 汉仪蝶语体,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("Love You", 23, 10);
+            ctx.fillText("Zhou Yi?", 23, 10);
             ctx.restore();
         },
         clear: function() {
